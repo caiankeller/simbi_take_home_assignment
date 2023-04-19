@@ -28,7 +28,7 @@ function Carousel() {
             .then(response => response.json())
             .then((response) => {
                 const elementsByRow = 3
-                setProjects(response.reduce((acc: any[][], curr: any, i: number) => { //cria um array of array que contém 3 objetos
+                setProjects(response.reduce((acc: any[][], curr: any, i: number) => { //creates an array of 3 objects 
                     return !(i % elementsByRow) ? acc.concat([response.slice(i, i + elementsByRow)]) : acc
                 }, []))
             })
